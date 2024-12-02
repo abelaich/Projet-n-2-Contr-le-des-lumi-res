@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Contro_le_des_lumie_resApp: App {
+struct LightControlApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LightControlView()
         }
     }
 }
