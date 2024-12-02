@@ -21,9 +21,12 @@ struct RoomView: View {
             Text(room.name)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            // Affichage de l'icône de la lampe selon l'état de l'éclairage
-            Image(systemName: room.lightState == .on ? "lightbulb.fill" : room.lightState == .off ? "lightbulb" : "lightbulb.slash")
-                .foregroundColor(room.lightState == .on ? .yellow : .gray)
+            // Affichage des images selon l'état de l'éclairage
+            Image(room.lightState == .on ? "light_on_purple" : room.lightState == .off ? "light_off_purple" : "warning_purple")
+                            .resizable() // redimensionner l'image si nécessaire
+                            .scaledToFit()
+                            .frame(width: 24, height: 24) // Ajuste la taille de l'image
+
 
             // Slider pour ajuster le niveau d'éclairage, désactivé si la pièce est défectueuse
             Slider(value: $tempLightLevel, in: 0...100, step: 1)
@@ -33,6 +36,15 @@ struct RoomView: View {
                             }
 
             Text("\(room.lightLevel)%")
+            
+            Button(action: {
+                            
+                        }) {
+                            Image("settings_purple")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                        }
         }
         .padding()
     }
