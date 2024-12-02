@@ -36,9 +36,8 @@ struct RoomView: View {
                             }
 
             Text("\(room.lightLevel)%")
-            
             Button(action: {
-                            
+                            // Logique de configuration (par exemple naviguer vers la vue de configuration)
                         }) {
                             Image("settings_purple")
                                 .resizable()
