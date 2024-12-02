@@ -16,6 +16,8 @@
 		63B6BAC72CFDAD460043DD20 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BAC62CFDAD460043DD20 /* RoomView.swift */; };
 		63B6BAC92CFDAE480043DD20 /* LightControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BAC82CFDAE480043DD20 /* LightControlView.swift */; };
 		63B6BACB2CFDAEF10043DD20 /* RoomConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BACA2CFDAEF10043DD20 /* RoomConfigView.swift */; };
+		63B6BACF2CFDC1B80043DD20 /* RoomRepositoryDummyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BACE2CFDC1B80043DD20 /* RoomRepositoryDummyImpl.swift */; };
+		63B6BAD12CFDC1F10043DD20 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BAD02CFDC1F10043DD20 /* Injector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		63B6BAC62CFDAD460043DD20 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		63B6BAC82CFDAE480043DD20 /* LightControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightControlView.swift; sourceTree = "<group>"; };
 		63B6BACA2CFDAEF10043DD20 /* RoomConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomConfigView.swift; sourceTree = "<group>"; };
+		63B6BACE2CFDC1B80043DD20 /* RoomRepositoryDummyImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepositoryDummyImpl.swift; sourceTree = "<group>"; };
+		63B6BAD02CFDC1F10043DD20 /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			children = (
 				63B6BAC22CFDAB170043DD20 /* Room.swift */,
 				63B6BAC42CFDAC500043DD20 /* RoomRepository.swift */,
+				63B6BACE2CFDC1B80043DD20 /* RoomRepositoryDummyImpl.swift */,
+				63B6BAD02CFDC1F10043DD20 /* Injector.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 				63B6BAC52CFDAC500043DD20 /* RoomRepository.swift in Sources */,
 				63B6BAB42CFDA60D0043DD20 /* ContentView.swift in Sources */,
 				63B6BAC72CFDAD460043DD20 /* RoomView.swift in Sources */,
+				63B6BACF2CFDC1B80043DD20 /* RoomRepositoryDummyImpl.swift in Sources */,
+				63B6BAD12CFDC1F10043DD20 /* Injector.swift in Sources */,
 				63B6BACB2CFDAEF10043DD20 /* RoomConfigView.swift in Sources */,
 				63B6BAB22CFDA60D0043DD20 /* Contro_le_des_lumie_resApp.swift in Sources */,
 				63B6BAC32CFDAB170043DD20 /* Room.swift in Sources */,

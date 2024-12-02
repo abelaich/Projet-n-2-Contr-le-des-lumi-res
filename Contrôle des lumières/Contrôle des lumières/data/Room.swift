@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct Room: Identifiable {  // Conformité au protocole Identifiable
+    var id: String { name }  // Utiliser le nom comme identifiant unique
+    var name: String
+    var lightState: LightState
+    var lightLevel: Int
+    var lightType: LightType
+    var outOfOrder: Bool
+}
+
 enum LightState: String, CaseIterable {
     case on = "On"
     case off = "Off"
@@ -16,13 +25,4 @@ enum LightState: String, CaseIterable {
 enum LightType: String, CaseIterable {
     case led = "LED"
     case halogen = "Halogen"
-}
-
-struct Room: Identifiable {
-    let id = UUID()
-    var name: String
-    var lightState: LightState
-    var lightLevel: Int
-    var lightType: LightType
-    var outOfOrder: Bool
 }
