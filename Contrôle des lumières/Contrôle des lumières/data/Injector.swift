@@ -1,12 +1,6 @@
-//
-//  Injector.swift
-//  Contrôle des lumières
-//
-//  Created by Alae on 02/12/2024.
-//
-
 import Foundation
 
+// Injector class to provide the room repository instance
 class Injector {
-    static let roomRepository: any RoomRepository = RoomRepositoryDummyImpl()
+    static let roomRepository: any RoomRepository = RoomRepositoryDummyImpl()  // Provide a RoomRepository instance
 }

@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Contrôle des lumières
-//
-//  Created by Alae on 02/12/2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {

@@ -1,13 +1,7 @@
-//
-//  RoomRepository.swift
-//  Contrôle des lumières
-//
-//  Created by Alae on 02/12/2024.
-//
-
 import Foundation
 
+// Define the RoomRepository protocol
 protocol RoomRepository: ObservableObject {
-    var rooms: [Room] { get set } 
-    func turnAllLights(on: Bool)
+    var rooms: [Room] { get set }  // Store a list of rooms
+    func turnAllLights(on: Bool)  // Function to turn all lights on or off
 }
