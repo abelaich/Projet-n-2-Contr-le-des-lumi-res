@@ -44,19 +44,18 @@ struct LightControlView: View {
                     .padding()
                 }
 
-
                 List {
-                                    ForEach($repository.rooms) { $room in
-                                        if !onlyLightsOn || room.lightState == .on {
-                                            RoomView(
-                                                room: $room,
-                                                onUpdate: { updatedRoom in
-                                                    repository.updateRoom(updatedRoom) // Mise à jour du room dans le repository
-                                                }
-                                            )
-                                        }
-                                    }
+                    ForEach($repository.rooms) { $room in
+                        if !onlyLightsOn || room.lightState == .on {
+                            RoomView(
+                                room: $room,
+                                onUpdate: { updatedRoom in
+                                    repository.updateRoom(updatedRoom) // Mise à jour du room dans le repository
                                 }
+                            )
+                        }
+                    }
+                }
             }
             .navigationTitle("Lights")
         }
