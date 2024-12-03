@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LightControlView: View {
-    @StateObject var repository = RoomRepositoryDummyImpl() // Utilisation de @StateObject ici
+    @ObservedObject var repository = Injector.roomRepository as! RoomRepositoryDummyImpl
     @State private var onlyLightsOn = false
     @State private var isAllOn = false
 
@@ -21,7 +21,7 @@ struct LightControlView: View {
                             Image("light_on_purple")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 15, height: 15)
                             Text("On")
                                 .font(.headline)
                         }
@@ -36,7 +36,7 @@ struct LightControlView: View {
                             Image("light_off_purple")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 15, height: 15)
                             Text("Off")
                                 .font(.headline)
                         }
@@ -44,23 +44,19 @@ struct LightControlView: View {
                     .padding()
                 }
 
-                Toggle(isOn: $onlyLightsOn) {
-                    Text("Show only rooms with lights on")
-                }
-                .padding()
 
                 List {
-                    ForEach($repository.rooms) { $room in
-                        if !onlyLightsOn || room.lightState == .on {
-                            RoomView(
-                                room: $room,
-                                onUpdate: { updatedRoom in
-                                    repository.updateRoom(updatedRoom) // Mise à jour du room dans le repository
+                                    ForEach($repository.rooms) { $room in
+                                        if !onlyLightsOn || room.lightState == .on {
+                                            RoomView(
+                                                room: $room,
+                                                onUpdate: { updatedRoom in
+                                                    repository.updateRoom(updatedRoom) // Mise à jour du room dans le repository
+                                                }
+                                            )
+                                        }
+                                    }
                                 }
-                            )
-                        }
-                    }
-                }
             }
             .navigationTitle("Lights")
         }
