@@ -1,20 +1,18 @@
 import SwiftUI
 
-// Define the main view for light control
 struct LightControlView: View {
-    @ObservedObject var repository = Injector.roomRepository as! RoomRepositoryDummyImpl  // Observe the repository
-    @State private var onlyLightsOn = false  // Toggle to filter rooms by light state
-    @State private var isAllOn = false  // Track if all lights are on
+    @ObservedObject var repository = Injector.roomRepository as! RoomRepositoryDummyImpl
+    @State private var onlyLightsOn = false
+    @State private var isAllOn = false
 
     var body: some View {
         NavigationView {
             VStack {
-                HStack(spacing: 20) {  // Petit espace entre chaque élément
-                    // Texte "All Lights"
+                HStack(spacing: 20) {
                     Text("All Lights")
                         .font(.title2)
-                        .padding(.trailing, 40)  // Petit espace à droite du bouton "On"
-                    // Bouton pour allumer toutes les lumières
+                        .padding(.trailing, 40)
+
                     Button(action: {
                         repository.turnAllLights(on: true)
                         isAllOn = true
@@ -28,9 +26,7 @@ struct LightControlView: View {
                                 .font(.headline)
                         }
                     }
-                    .padding(.trailing, 4)  // Petit espace à droite du bouton "On"
 
-                    // Bouton pour éteindre toutes les lumières
                     Button(action: {
                         repository.turnAllLights(on: false)
                         isAllOn = false
@@ -44,31 +40,24 @@ struct LightControlView: View {
                                 .font(.headline)
                         }
                     }
-                    .padding(.leading, 4)  // Petit espace à gauche du bouton "Off"
                 }
-                .frame(maxWidth: .infinity)  // La HStack prend toute la largeur disponible
-                .padding(10)  // Padding global autour de la HStack
+                .padding(10)
 
-                
-                // List of rooms with light control
                 List {
                     ForEach($repository.rooms) { $room in
-                        // Only show rooms with lights on if filter is active
                         if !onlyLightsOn || room.lightState == .on {
                             RoomView(
                                 room: $room,
                                 onUpdate: { updatedRoom in
-                                    repository.updateRoom(updatedRoom)  // Update room in repository
+                                    repository.updateRoom(updatedRoom)
                                 }
                             )
-                            .frame(maxWidth: .infinity)  // Ensure the RoomView takes up full width
+                            .frame(maxWidth: .infinity)
                         }
                     }
                 }
-                .frame(maxWidth: .infinity)  // Ensure the List takes up full width
-                .listStyle(PlainListStyle())  // Use PlainListStyle for better control over layout
+                .listStyle(PlainListStyle())
             }
-            .frame(maxWidth: .infinity)  // Ensure the VStack takes up full width
             .navigationTitle("Lights")
         }
     }

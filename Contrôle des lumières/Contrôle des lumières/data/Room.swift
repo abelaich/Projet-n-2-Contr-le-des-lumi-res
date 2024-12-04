@@ -1,15 +1,14 @@
 import Foundation
 
-// Define Room structure conforming to Identifiable protocol
 struct Room: Identifiable {
-    var id: String { name }  // Use name as a unique identifier
+    var id: String { name }
     var name: String
-    var lightState: LightState  // Store the state of the light
-    var lightLevel: Int  // Store the light level (0 to 100)
-    var lightType: LightType  // Store the light type (LED or Halogen)
-    var outOfOrder: Bool  // Indicates if the room's light is out of order
+    var lightState: LightState
+    var lightLevel: Int
+    var lightPower: Int
+    var lightType: LightType
+    var outOfOrder: Bool
 }
-
 // Define possible light states
 enum LightState: String, CaseIterable {
     case on = "On"

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6384BCDC2D00995100392D98 /* ClipboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384BCDB2D00995100392D98 /* ClipboardHelper.swift */; };
 		63B6BAB22CFDA60D0043DD20 /* Contro_le_des_lumie_resApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BAB12CFDA60D0043DD20 /* Contro_le_des_lumie_resApp.swift */; };
 		63B6BAB42CFDA60D0043DD20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6BAB32CFDA60D0043DD20 /* ContentView.swift */; };
 		63B6BAB62CFDA60F0043DD20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B6BAB52CFDA60F0043DD20 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6384BCDB2D00995100392D98 /* ClipboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHelper.swift; sourceTree = "<group>"; };
 		63B6BAAE2CFDA60D0043DD20 /* Contrôle des lumières.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contrôle des lumières.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B6BAB12CFDA60D0043DD20 /* Contro_le_des_lumie_resApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contro_le_des_lumie_resApp.swift; sourceTree = "<group>"; };
 		63B6BAB32CFDA60D0043DD20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6384BCDA2D00993D00392D98 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6384BCDB2D00995100392D98 /* ClipboardHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		63B6BAA52CFDA60D0043DD20 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		63B6BAB02CFDA60D0043DD20 /* Contrôle des lumières */ = {
 			isa = PBXGroup;
 			children = (
+				6384BCDA2D00993D00392D98 /* Utilities */,
 				63B6BAC12CFDA9120043DD20 /* data */,
 				63B6BAC02CFDA9020043DD20 /* views */,
 				63B6BAB12CFDA60D0043DD20 /* Contro_le_des_lumie_resApp.swift */,
@@ -174,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6384BCDC2D00995100392D98 /* ClipboardHelper.swift in Sources */,
 				63B6BAC52CFDAC500043DD20 /* RoomRepository.swift in Sources */,
 				63B6BAB42CFDA60D0043DD20 /* ContentView.swift in Sources */,
 				63B6BAC72CFDAD460043DD20 /* RoomView.swift in Sources */,

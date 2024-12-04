@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 
-// Define the Room view
 struct RoomView: View {
     @Binding var room: Room  // Bind the room object from the parent view
     var onUpdate: (Room) -> Void  // Closure to notify the parent of room updates
@@ -9,27 +8,22 @@ struct RoomView: View {
 
     var body: some View {
         HStack(spacing: 16) {  // Adjusted spacing for consistency
-            // Display the room's name, aligned to the left
             Text(room.name)
                 .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .leading)  // Fix the position to the left
+                .frame(maxWidth: .infinity, alignment: .leading)
 
-            // Conditionally display the warning or light icon based on the room's status
             if room.outOfOrder {
-                // Show warning icon if the room is out of order
                 Image("warning_purple")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 20, height: 20)  // Fixed size
+                    .frame(width: 20, height: 20)
             } else {
-                // Show light icon based on light level (on or off)
                 Image(room.lightLevel > 0 ? "light_on_purple" : "light_off_purple")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 20, height: 20)  // Fixed size
+                    .frame(width: 20, height: 20)
             }
 
-            // Slider to adjust light intensity, disabled if the room is out of order
             Slider(
                 value: Binding(
                     get: { Double(room.lightLevel) },
@@ -42,23 +36,22 @@ struct RoomView: View {
                 in: 0...100,
                 step: 1
             )
-            .disabled(room.outOfOrder)  // Disable slider if room is out of order
-            .frame(width: 70)  // Set a fixed width for the slider
+            .disabled(room.outOfOrder)
+            .frame(width: 70)
 
-            // Display the light level percentage
             Text("\(room.lightLevel)%")
                 .font(.subheadline)
                 .foregroundColor(.gray)
 
-            // Navigation button for room configuration
             NavigationLink(destination: RoomConfigView(room: $room)) {
-                Image("settings_purple")  // Show settings icon
+                Image("settings_purple")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 20, height: 20)  // Fixed size
-            } .buttonStyle(PlainButtonStyle())
+                    .frame(width: 20, height: 20)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
-        .frame(maxWidth: .infinity)  // Ensure the HStack takes the full available width
-
+        .frame(maxWidth: .infinity)
     }
 }
+
